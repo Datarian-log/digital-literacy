@@ -8,7 +8,7 @@ import ResultsPage from './pages/ResultsPage';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/digital-literacy">
       <AssessmentProvider>
         <div className="min-h-screen flex flex-col bg-gray-50">
           <Header />
