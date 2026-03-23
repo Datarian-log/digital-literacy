@@ -31,6 +31,7 @@ export const questions: Question[] = [
     type: QuestionType.LIKERT,
     text: 'I can use advanced search filters such as date range, file type, and domain to refine search results.',
     graduateText: 'I can use discipline-specific databases (e.g., Scopus, Web of Science) and features like citation tracking to find relevant research.',
+    graduateOnly: true,
   },
   {
     id: 'is-5',
@@ -105,6 +106,7 @@ export const questions: Question[] = [
     type: QuestionType.LIKERT,
     text: 'I understand the ethical guidelines for using AI tools in academic work (citation, disclosure, etc.).',
     graduateText: 'I am familiar with my institution\'s and my field\'s policies on using AI in research and academic writing, including when and how to disclose AI use.',
+    graduateOnly: true,
   },
   {
     id: 'ai-5',
@@ -179,6 +181,7 @@ export const questions: Question[] = [
     type: QuestionType.LIKERT,
     text: 'I can use spreadsheets (Excel, Google Sheets) to organize data and perform basic analysis.',
     graduateText: 'I can use data analysis tools (e.g., Excel, R, Python, or SPSS) to organize and analyze data for my own research.',
+    graduateOnly: true,
   },
   {
     id: 'dl-5',
@@ -253,6 +256,7 @@ export const questions: Question[] = [
     type: QuestionType.LIKERT,
     text: 'I understand the basic principles of research ethics (e.g., not fabricating data, getting consent from research participants, properly crediting contributors).',
     graduateText: 'I understand research ethics processes (e.g., ethics review for human subjects) and responsible data management practices.',
+    graduateOnly: true,
   },
   {
     id: 'ac-5',

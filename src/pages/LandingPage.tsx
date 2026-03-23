@@ -32,7 +32,8 @@ export default function LandingPage() {
     );
   };
 
-  const questionCount = selectedDomains.length * 6;
+  const questionsPerDomain = studentLevel === StudentLevel.UNDERGRADUATE ? 5 : 6;
+  const questionCount = selectedDomains.length * questionsPerDomain;
   const estimatedMinutes = selectedDomains.length <= 2 ? '5-8' : '10-15';
 
   const handleStart = () => {

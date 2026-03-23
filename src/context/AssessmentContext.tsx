@@ -28,13 +28,16 @@ const initialState: AssessmentState = {
   result: null,
 };
 
-function getFilteredQuestions(selectedDomains: Domain[]): Question[] {
-  if (selectedDomains.length === 0) return questions;
-  return questions.filter(q => selectedDomains.includes(q.domain));
+function getFilteredQuestions(selectedDomains: Domain[], studentLevel: StudentLevel): Question[] {
+  let filtered = selectedDomains.length === 0 ? questions : questions.filter(q => selectedDomains.includes(q.domain));
+  if (studentLevel === StudentLevel.UNDERGRADUATE) {
+    filtered = filtered.filter(q => !q.graduateOnly);
+  }
+  return filtered;
 }
 
 function reducer(state: AssessmentState, action: Action): AssessmentState {
-  const filtered = getFilteredQuestions(state.selectedDomains);
+  const filtered = getFilteredQuestions(state.selectedDomains, state.studentLevel);
 
   switch (action.type) {
     case 'SET_STUDENT_LEVEL':
@@ -96,7 +99,7 @@ export function AssessmentProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const value = useMemo(() => {
-    const filtered = getFilteredQuestions(state.selectedDomains);
+    const filtered = getFilteredQuestions(state.selectedDomains, state.studentLevel);
     const currentQuestion = filtered[state.currentQuestionIndex];
     const currentAnswer = state.answers.find(
       a => a.questionId === currentQuestion?.id,

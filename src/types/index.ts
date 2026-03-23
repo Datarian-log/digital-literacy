@@ -40,6 +40,7 @@ export interface LikertQuestion {
   text: string;
   graduateText?: string;
   reversed?: boolean;
+  graduateOnly?: boolean;
 }
 
 export interface McqOption {
@@ -58,6 +59,7 @@ export interface McqQuestion {
   graduateScenario?: string;
   options: McqOption[];
   graduateOptions?: McqOption[];
+  graduateOnly?: boolean;
 }
 
 export type Question = LikertQuestion | McqQuestion;
