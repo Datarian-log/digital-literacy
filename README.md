@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# Digital Literacy Self-Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A self-assessment tool for university library students to evaluate their digital literacy skills across four domains.
 
-Currently, two official plugins are available:
+**Live site:** https://datarian-log.github.io/digital-literacy/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **4 Assessment Domains**: Information Search & Evaluation, AI Literacy, Data Literacy, Academic Information Use
+- **Student Level Adaptation**: Separate question variants for undergraduate and graduate students
+- **Domain Selection**: Multi-select domains on the landing page to customize the assessment
+- **Analytical Results**: Strengths analysis, personalized learning path with recommendations
+- **Interest Survey**: Collect student interest in workshops and programs
+- **Export**: PDF download and print support
+- **Google Sheets Integration**: Auto-submit results and survey responses
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+React 19 · TypeScript · Vite · Tailwind CSS v4
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+cp .env.example .env   # Add your Google Apps Script URL
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Google Sheets Setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Create a new Google Spreadsheet
+2. Open **Extensions > Apps Script** and paste the contents of `google-apps-script.js`
+3. Deploy as a Web App (Execute as: Me, Access: Anyone)
+4. Copy the deployment URL into your `.env` file as `VITE_GOOGLE_SHEETS_URL`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Deployment
+
+Deployed automatically to GitHub Pages via GitHub Actions on push to `main`.

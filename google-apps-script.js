@@ -39,7 +39,7 @@ function doPost(e) {
 }
 
 function getOrCreateSheet(ss, name, headers) {
-  var sheet = ss.getSheetByName(name);
+  var sheet = SpreadsheetApp.openById("1SSq0luYOUrhF0oeh8ObT-fe_k3UgC8YeNbyL7iurKQc");;
   if (!sheet) {
     sheet = ss.insertSheet(name);
     sheet.appendRow(headers);
