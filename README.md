@@ -1,6 +1,6 @@
 # 📚 Digital Literacy Self-Assessment
 
-A self-assessment tool for university library students to evaluate their digital literacy skills across four domains.
+A self-assessment tool for university students to evaluate their digital literacy skills across four domains.
 
 🔗 **Live site:** https://datarian-log.github.io/digital-literacy/
 
