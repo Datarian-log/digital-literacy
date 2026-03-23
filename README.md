@@ -12,7 +12,7 @@ A self-assessment tool for university students to evaluate their digital literac
 - 📊 **Analytical Results** — Strengths analysis, personalized learning path with recommendations
 - 📋 **Interest Survey** — Collect student interest in workshops and programs
 - 📄 **Export** — PDF download and print support
-- 📡 **Google Sheets Integration** — Auto-submit results and survey responses
+- 📡 **Google Sheets Integration** — Auto-submit assessment results and interest survey responses to Google Sheets
 
 ## 🛠 Tech Stack
 
